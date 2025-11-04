@@ -19,6 +19,13 @@
   --main-color: #0ef;
 }
 
+/* تنسيق رابط اللغة النشطة */
+.lang-switch a.active-lang {
+  color: var(--main-color);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 html {
   font-size: 62.5%;
   overflow-x: hidden;

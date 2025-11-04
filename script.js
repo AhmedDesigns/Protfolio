@@ -21,7 +21,7 @@ window.onscroll = () => {
     
     if (top >= offset && top < offset + height) {
       navlinks.forEach(link => link.classList.remove('active'));
-      let activeLink = document.querySelector('header nav a[href="#' + id + '"]');
+      let activeLink = document.querySelector('header nav a[href*=' + id + ']');
       if (activeLink) activeLink.classList.add('active');
     }
   });
@@ -49,13 +49,9 @@ ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
 //==================== typed js ====================//
 const typed = new Typed('.multiple-text', {
-  strings: ['مصمم ويب', 'مطور ويب', 'مصمم UI/UX', 'خبير تجارة إلكترونية'],
+  strings: ['Web Designer', 'Web Developer', 'UI/UX Designer', 'E-commerce Expert'],
   typeSpeed: 100,
   backSpeed: 100,
   backDelay: 1000,
   loop: true
 });
-
-//==================== ملاحظة زر اللغة ====================//
-// الزر <div class="lang-switch"> يعمل فقط كرابط لتغيير الصفحة بين اللغات
-// لا يحتاج أي JS إضافي إلا لو أردت عمل تغيير ديناميكي بدون إعادة تحميل الصفحة
