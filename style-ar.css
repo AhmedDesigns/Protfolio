@@ -363,23 +363,32 @@ span {
     gap: 2rem;
 }
 
-.portfolio-box,
 .project {
-    position: relative;
-    border-radius: 2rem;
+    background-color: #222;
+    border-radius: 1.5rem;
     overflow: hidden;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.portfolio-box img,
+.project:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 1.5rem var(--main-color);
+}
+
 .project img {
     width: 100%;
-    transition: .5s ease;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.4s ease;
 }
 
-.portfolio-box:hover img,
 .project:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 /* ====== Contact Section ====== */
