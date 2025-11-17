@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+   /* ====== خط عربي وجوجل فونت ====== */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
 
 * {
     margin: 0;
@@ -8,7 +9,7 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Cairo', sans-serif;
 }
 
 :root {
@@ -26,6 +27,7 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    direction: rtl;
 }
 
 section {
@@ -67,7 +69,7 @@ section {
     display: block;
 }
 
-/* ====== Language Switch ====== */
+/* ====== زر تبديل اللغة ====== */
 .lang-switch {
     font-size: 1.6rem;
     z-index: 101;
@@ -84,14 +86,14 @@ section {
     color: var(--main-color);
 }
 
-/* ====== Right Side Elements ====== */
+/* ====== العناصر على اليمين ====== */
 .nav-right {
     display: flex;
     align-items: center;
     gap: 2rem;
 }
 
-/* Mobile Menu Button */
+/* زر القائمة للهاتف */
 #menu-icon {
     font-size: 3.6rem;
     color: var(--text-color);
@@ -140,10 +142,6 @@ section {
     100% { transform: translateY(0); }
 }
 
-.home-content h3:nth-of-type(2) {
-    margin-bottom: 2rem;
-}
-
 span {
     color: var(--main-color);
 }
@@ -156,7 +154,7 @@ span {
 
 .home-content p {
     font-size: 1.6rem;
-    line-height: 1.6;
+    line-height: 2;
 }
 
 /* ====== Social Media Icons ====== */
@@ -227,44 +225,14 @@ span {
     display: block;
 }
 
-.about-full {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
-    background: var(--second-bg-color);
-    flex-wrap: wrap;
-    padding: 12rem 9% 4rem;
-    min-height: 100vh;
-}
-
-.about-full .about-img img {
-    width: 40vw;
-    max-width: 500px;
-    height: auto;
-    border-radius: 1rem;
-    display: block;
-}
-
-.about-full .about-content {
-    flex: 1;
-    min-width: 300px;
-}
-
-.about-full .about-content p {
-    margin-bottom: 2rem;
-    line-height: 1.8;
-}
-
 .heading {
     text-align: center;
     font-size: 4.5rem;
-    margin-bottom: 3rem;
 }
 
 .about-content h2 {
-    text-align: left;
-    line-height: 1.2;
+    text-align: right;
+    line-height: 1.5;
 }
 
 .about-content h3 {
@@ -274,7 +242,65 @@ span {
 .about-content p {
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
+    line-height: 2;
+}
+
+/* ====== About Full ====== */
+.about-full {
+    padding-top: 12rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-align: center;
+    gap: 4rem;
+    background: var(--second-bg-color);
+    flex-wrap: wrap;
+}
+
+.about-full .about-img img {
+    width: 35vw;
+    max-width: 500px;
+    height: auto;
+    border-radius: 2rem;
+    display: block;
+    box-shadow: 0 0 2rem var(--main-color);
+}
+
+.about-full .about-content {
+    flex: 1 1 40rem;
+}
+
+.about-full .about-content h2 {
+    text-align: right;
+    margin-bottom: 3rem;
+    font-size: 4rem;
+}
+
+.about-full .about-content p {
+    font-size: 1.8rem;
+    margin: 2rem 0;
     line-height: 1.8;
+    text-align: justify;
+}
+
+.about-full .about-content ul {
+    margin: 2rem 0;
+    padding-right: 2rem;
+}
+
+.about-full .about-content li {
+    font-size: 1.6rem;
+    margin: 1rem 0;
+    line-height: 1.6;
+    list-style-type: disc;
+}
+
+.about-full .about-content strong {
+    color: var(--main-color);
+}
+
+.about-full .btn {
+    margin-top: 2rem;
 }
 
 /* ====== Services Section ====== */
@@ -318,7 +344,7 @@ span {
 .services-box p {
     font-size: 1.6rem;
     margin: 1rem 0 3rem;
-    line-height: 1.8;
+    line-height: 2;
 }
 
 /* ====== Portfolio Section ====== */
@@ -331,39 +357,63 @@ span {
     text-align: center;
 }
 
+/* ديسكتوب: 3 صور */
 .portfolio-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
-.portfolio-box,
-.project {
-    position: relative;
-    border-radius: 1.5rem;
-    overflow: hidden;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-    background: #222;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
+/* تابلت: عمودين */
+@media (max-width: 992px) {
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.portfolio-box img,
+/* موبايل — التعديل المطلوب: صورتين */
+@media (max-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* أصغر الشاشات: أيضًا صورتين */
+@media (max-width: 450px) {
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+.project {
+    background-color: #222;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 1.5rem var(--main-color);
+}
+
 .project img {
     width: 100%;
     height: auto;
     object-fit: contain;
-    transition: transform 0.5s ease;
+    transition: transform 0.4s ease;
 }
 
-.portfolio-box:hover img,
 .project:hover img {
     transform: scale(1.05);
 }
 
-/* ====== Contact Section ====== */
+/* ====== Contact ====== */
 .contact h2 {
     margin-bottom: 3rem;
     text-align: center;
@@ -390,7 +440,6 @@ span {
     background: var(--second-bg-color);
     border-radius: .8rem;
     margin: .7rem 0;
-    border: .1rem solid rgba(255, 255, 255, 0.1);
 }
 
 .contact form .input-box input {
@@ -403,7 +452,6 @@ span {
 
 .contact form .btn {
     margin-top: 2rem;
-    cursor: pointer;
 }
 
 /* ====== Footer ====== */
@@ -441,22 +489,17 @@ span {
 
 /* ====== Responsive Design ====== */
 @media (max-width: 991px) {
-    .header {
-        padding: 2rem 3%;
-    }
-    section {
-        padding: 10rem 3% 2rem;
-    }
-    .footer {
-        padding: 2rem 3%;
-    }
+    .header { padding: 2rem 3%; }
+    section { padding: 10rem 3% 2rem; }
+    .footer { padding: 2rem 3%; }
     .home-img img,
-    .about-img img {
+    .about-img img,
+    .about-full .about-img img {
         width: 90vw;
         max-width: 600px;
     }
     .about-full {
-        padding: 12rem 3% 4rem;
+        padding-top: 10rem;
     }
 }
 
@@ -468,7 +511,7 @@ span {
     .navbar {
         position: absolute;
         top: 100%;
-        left: 0;
+        right: 0;
         width: 100%;
         padding: 1rem 3%;
         background: var(--bg-color);
@@ -511,42 +554,39 @@ span {
         margin-top: 1rem;
     }
 
-    .home {
+    .home { 
         flex-direction: column;
         text-align: center;
     }
-
-    .home-img img {
-        width: 90vw;
-        margin-top: 2rem;
+    .home-img img { 
+        width: 90vw; 
+        margin-top: 2rem; 
     }
+    .about { flex-direction: column; }
+    .about-img img { width: 90vw; }
 
-    .about,
     .about-full {
+        padding-top: 8rem;
         flex-direction: column;
         text-align: center;
     }
 
-    .about-img img,
+    .about-full .about-content h2 {
+        text-align: center;
+    }
+
+    .about-full .about-content p {
+        text-align: right;
+    }
+
     .about-full .about-img img {
-        width: 90vw;
+        width: 80vw;
+        margin-top: 0;
     }
 
-    .about-content h2 {
-        text-align: center;
-    }
+    .services-container { flex-direction: column; }
 
-    .services-container {
-        flex-direction: column;
-    }
-
-    .portfolio-container {
-        grid-template-columns: 1fr;
-    }
-
-    .contact form .input-box input {
-        width: 100%;
-    }
+    .contact form .input-box input { width: 100%; }
 
     .footer {
         flex-direction: column;
@@ -556,21 +596,12 @@ span {
 }
 
 @media (max-width: 450px) {
-    html {
-        font-size: 55%;
-    }
-    
-    .home-content h1 {
-        font-size: 4.5rem;
-    }
-    
-    .home-content h3 {
-        font-size: 2.5rem;
-    }
-    
-    .heading {
-        font-size: 3.5rem;
-    }
+    .home-content h1 { font-size: 4rem; }
+    .home-content h3 { font-size: 2.5rem; }
+    .heading { font-size: 3.5rem; }
+    .about-full .about-content h2 { font-size: 3rem; }
+    .about-full .about-content p { font-size: 1.6rem; }
+    .about-full { padding-top: 6rem; }
     
     .header {
         padding: 1rem 3%;
@@ -578,9 +609,5 @@ span {
     
     .header .logo-img {
         height: 40px;
-    }
-    
-    .about-full {
-        padding: 10rem 3% 4rem;
     }
 }
