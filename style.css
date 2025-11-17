@@ -1,4 +1,4 @@
-   /* ====== خط عربي وجوجل فونت ====== */
+/* ====== خط عربي وجوجل فونت ====== */
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
 
 * {
@@ -371,17 +371,33 @@ span {
     }
 }
 
-/* موبايل — التعديل المطلوب: صورتين */
+/* موبايل - صورتين */
 @media (max-width: 768px) {
     .portfolio-container {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .project {
+        padding: 0.8rem;
+        border-radius: 1rem;
     }
 }
 
-/* أصغر الشاشات: أيضًا صورتين */
+/* أصغر الشاشات: صورتين مع تقليل الهوامش */
 @media (max-width: 450px) {
     .portfolio-container {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .project {
+        padding: 0.5rem;
+        border-radius: 0.8rem;
+    }
+    
+    .portfolio h2 {
+        margin-bottom: 3rem;
     }
 }
 
