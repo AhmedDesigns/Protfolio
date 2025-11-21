@@ -163,6 +163,8 @@ span {
 .home-content p {
     font-size: 1.6rem;
     line-height: 2;
+    text-align: right;
+    direction: rtl;
 }
 
 /* ====== Social Media Icons ====== */
@@ -247,15 +249,19 @@ span {
 
 .about-content {
     text-align: right;
+    direction: rtl;
 }
 
 .about-content h2 {
     text-align: right;
     line-height: 1.5;
+    direction: rtl;
 }
 
 .about-content h3 {
     font-size: 2.6rem;
+    text-align: right;
+    direction: rtl;
 }
 
 .about-content p {
@@ -264,6 +270,7 @@ span {
     line-height: 2;
     direction: rtl;
     text-align: right;
+    unicode-bidi: plaintext;
 }
 
 .about-btn-container {
@@ -294,12 +301,15 @@ span {
 
 .about-full .about-content {
     flex: 1 1 40rem;
+    text-align: right;
+    direction: rtl;
 }
 
 .about-full .about-content h2 {
     text-align: right;
     margin-bottom: 3rem;
     font-size: 4rem;
+    direction: rtl;
 }
 
 .about-full .about-content p {
@@ -308,11 +318,13 @@ span {
     line-height: 1.8;
     text-align: right;
     direction: rtl;
+    unicode-bidi: plaintext;
 }
 
 .about-full .about-content ul {
     margin: 2rem 0;
-    padding-left: 2rem;
+    padding-right: 2rem;
+    direction: rtl;
 }
 
 .about-full .about-content li {
@@ -374,6 +386,8 @@ span {
     font-size: 1.6rem;
     margin: 1rem 0 3rem;
     line-height: 2;
+    text-align: center;
+    direction: rtl;
 }
 
 /* ====== Portfolio Section ====== */
@@ -497,6 +511,8 @@ span {
     background: var(--second-bg-color);
     border-radius: .8rem;
     margin: .7rem 0;
+    direction: rtl;
+    text-align: right;
 }
 
 .contact form .input-box input {
@@ -505,6 +521,8 @@ span {
 
 .contact form textarea {
     resize: none;
+    direction: rtl;
+    text-align: right;
 }
 
 .contact form .btn {
@@ -523,6 +541,8 @@ span {
 
 .footer-text p {
     font-size: 1.6rem;
+    direction: rtl;
+    text-align: center;
 }
 
 .footer-iconTop a {
@@ -634,6 +654,7 @@ span {
 
     .about-full .about-content p {
         text-align: right;
+        direction: rtl;
     }
 
     .about-btn-container {
@@ -670,5 +691,12 @@ span {
     
     .header .logo-img {
         height: 40px;
+    }
+    
+    .about-content p,
+    .home-content p {
+        text-align: right;
+        direction: rtl;
+        unicode-bidi: plaintext;
     }
 }
