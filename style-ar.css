@@ -590,11 +590,3 @@ span {
         height: 40px;
     }
 }
-
-/* ====== إصلاح اتجاه النص المتحرك (Typed.js) ====== */
-.multiple-text {
-    direction: rtl;
-    unicode-bidi: plaintext;
-    text-align: right;
-    font-family: 'Cairo', sans-serif;
-}
