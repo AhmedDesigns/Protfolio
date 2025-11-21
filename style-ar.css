@@ -28,6 +28,7 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
     direction: rtl;
+    text-align: right;
 }
 
 section {
@@ -164,7 +165,6 @@ span {
     font-size: 1.6rem;
     line-height: 2;
     text-align: right;
-    direction: rtl;
 }
 
 /* ====== Social Media Icons ====== */
@@ -249,33 +249,32 @@ span {
 
 .about-content {
     text-align: right;
-    direction: rtl;
+    width: 100%;
 }
 
 .about-content h2 {
     text-align: right;
     line-height: 1.5;
-    direction: rtl;
+    margin-bottom: 2rem;
 }
 
 .about-content h3 {
     font-size: 2.6rem;
     text-align: right;
-    direction: rtl;
 }
 
-.about-content p {
+.about-text {
     font-size: 1.6rem;
-    margin: 2rem 0 3rem;
+    margin: 2rem 0;
     line-height: 2;
-    direction: rtl;
     text-align: right;
+    direction: rtl;
     unicode-bidi: plaintext;
 }
 
 .about-btn-container {
     text-align: right;
-    direction: rtl;
+    margin-top: 2rem;
 }
 
 /* ====== About Full ====== */
@@ -302,14 +301,12 @@ span {
 .about-full .about-content {
     flex: 1 1 40rem;
     text-align: right;
-    direction: rtl;
 }
 
 .about-full .about-content h2 {
     text-align: right;
     margin-bottom: 3rem;
     font-size: 4rem;
-    direction: rtl;
 }
 
 .about-full .about-content p {
@@ -324,7 +321,6 @@ span {
 .about-full .about-content ul {
     margin: 2rem 0;
     padding-right: 2rem;
-    direction: rtl;
 }
 
 .about-full .about-content li {
@@ -332,8 +328,8 @@ span {
     margin: 1rem 0;
     line-height: 1.6;
     list-style-type: disc;
-    direction: rtl;
     text-align: right;
+    direction: rtl;
 }
 
 .about-full .about-content strong {
@@ -387,7 +383,6 @@ span {
     margin: 1rem 0 3rem;
     line-height: 2;
     text-align: center;
-    direction: rtl;
 }
 
 /* ====== Portfolio Section ====== */
@@ -541,7 +536,6 @@ span {
 
 .footer-text p {
     font-size: 1.6rem;
-    direction: rtl;
     text-align: center;
 }
 
@@ -639,7 +633,7 @@ span {
         width: 90vw; 
         margin-top: 2rem; 
     }
-    .about { flex-direction: column; }
+    .about { flex-direction: column-reverse; }
     .about-img img { width: 90vw; }
 
     .about-full {
@@ -654,7 +648,6 @@ span {
 
     .about-full .about-content p {
         text-align: right;
-        direction: rtl;
     }
 
     .about-btn-container {
@@ -691,12 +684,5 @@ span {
     
     .header .logo-img {
         height: 40px;
-    }
-    
-    .about-content p,
-    .home-content p {
-        text-align: right;
-        direction: rtl;
-        unicode-bidi: plaintext;
     }
 }
