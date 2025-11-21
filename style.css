@@ -128,6 +128,14 @@ section {
     max-width: 500px;
     height: auto;
     display: block;
+    border-radius: 50%;
+    box-shadow: 0 0 2rem var(--main-color);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.home-img img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 3rem var(--main-color);
 }
 
 .home-content h3 {
@@ -221,8 +229,15 @@ span {
     width: 35vw;
     max-width: 500px;
     height: auto;
-    border-radius: 1rem;
+    border-radius: 50%;
     display: block;
+    box-shadow: 0 0 2rem var(--main-color);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-img img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 3rem var(--main-color);
 }
 
 .heading {
@@ -230,8 +245,12 @@ span {
     font-size: 4.5rem;
 }
 
+.about-content {
+    text-align: left;
+}
+
 .about-content h2 {
-    text-align: right;
+    text-align: left;
     line-height: 1.5;
 }
 
@@ -243,6 +262,13 @@ span {
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
     line-height: 2;
+    direction: ltr;
+    text-align: left;
+}
+
+.about-btn-container {
+    text-align: left;
+    direction: ltr;
 }
 
 /* ====== About Full ====== */
@@ -271,7 +297,7 @@ span {
 }
 
 .about-full .about-content h2 {
-    text-align: right;
+    text-align: left;
     margin-bottom: 3rem;
     font-size: 4rem;
 }
@@ -280,12 +306,13 @@ span {
     font-size: 1.8rem;
     margin: 2rem 0;
     line-height: 1.8;
-    text-align: justify;
+    text-align: left;
+    direction: ltr;
 }
 
 .about-full .about-content ul {
     margin: 2rem 0;
-    padding-right: 2rem;
+    padding-left: 2rem;
 }
 
 .about-full .about-content li {
@@ -293,6 +320,8 @@ span {
     margin: 1rem 0;
     line-height: 1.6;
     list-style-type: disc;
+    direction: ltr;
+    text-align: left;
 }
 
 .about-full .about-content strong {
@@ -426,6 +455,18 @@ span {
 }
 
 .project:hover img {
+    transform: scale(1.05);
+}
+
+/* ====== تأثير إضافي للصورتين الأولى والثانية ====== */
+.portfolio-container .project:nth-child(1):hover,
+.portfolio-container .project:nth-child(2):hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 1.5rem var(--main-color);
+}
+
+.portfolio-container .project:nth-child(1):hover img,
+.portfolio-container .project:nth-child(2):hover img {
     transform: scale(1.05);
 }
 
@@ -592,7 +633,11 @@ span {
     }
 
     .about-full .about-content p {
-        text-align: right;
+        text-align: left;
+    }
+
+    .about-btn-container {
+        text-align: center;
     }
 
     .about-full .about-img img {
