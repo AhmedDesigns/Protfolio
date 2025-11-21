@@ -271,10 +271,10 @@ span {
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
     line-height: 2;
-    text-align: right !important;
-    direction: rtl !important;
-    unicode-bidi: plaintext !important;
-    text-align-last: right !important;
+    text-align: right;
+    direction: rtl;
+    unicode-bidi: plaintext;
+    text-align-last: right;
 }
 
 /* حل بديل للنص المختلط */
@@ -710,14 +710,14 @@ span {
 /* ====== حل إضافي للمشكلة ====== */
 /* إذا استمرت المشكلة، جرب هذه القاعدة الإضافية */
 .about-content p:first-of-type {
-    text-align: right !important;
-    direction: rtl !important;
-    unicode-bidi: plaintext !important;
+    text-align: right;
+    direction: rtl;
+    unicode-bidi: plaintext;
 }
 
 /* حل بديل باستخدام محدد أقوى */
 section#about .about-content p {
-    text-align: right !important;
-    direction: rtl !important;
-    unicode-bidi: plaintext !important;
+    text-align: right;
+    direction: rtl;
+    unicode-bidi: plaintext;
 }
