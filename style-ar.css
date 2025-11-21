@@ -168,8 +168,7 @@ span {
 }
 
 /* ====== Social Media Icons ====== */
-.social-media a,
-.social-img-link {
+.social-media a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -184,17 +183,10 @@ span {
     transition: .5s ease;
 }
 
-.social-media a:hover,
-.social-img-link:hover {
+.social-media a:hover {
     background: var(--main-color);
     color: var(--second-bg-color);
     box-shadow: 0 0 1rem var(--main-color);
-}
-
-.social-img-link img.social-img {
-    width: 50%;
-    height: 50%;
-    object-fit: contain;
 }
 
 /* ====== Buttons ====== */
@@ -217,7 +209,14 @@ span {
     box-shadow: none;
 }
 
-/* ====== About Section - الإصلاح النهائي ====== */
+/* ====== Home Buttons Container ====== */
+.home-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+/* ====== About Section ====== */
 .about {
     display: flex;
     justify-content: center;
@@ -588,5 +587,15 @@ span {
     
     .header .logo-img {
         height: 40px;
+    }
+    
+    .home-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .home-buttons .btn {
+        width: 100%;
+        text-align: center;
     }
 }
