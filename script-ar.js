@@ -31,17 +31,28 @@ window.onscroll = () => {
   navbar.classList.remove('active');
 };
 
+// إعداد ScrollReveal للغة العربية (اتجاه RTL)
 ScrollReveal({
   distance: '80px',
   duration: 2000,
-  delay: 200
+  delay: 200,
+  easing: 'ease-in-out',
+  reset: true
 });
 
+// من الأعلى
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img, .services-container, .portfolio-container, .contact form', { origin: 'bottom' });
-ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
-ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
+// من الأسفل
+ScrollReveal().reveal('.home-img, .services-container, .portfolio-container, .contact form', { origin: 'bottom' });
+
+// من اليمين (بدل اليسار لأنها لغة عربية)
+ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'right' });
+
+// من اليسار (بدل اليمين لأنها لغة عربية)
+ScrollReveal().reveal('.home-content p, .about-content', { origin: 'left' });
+
+// كتابة تلقائية بالعربية
 const typed = new Typed('.multiple-text', {
   strings: ['مصمم ويب', 'مطور ويب', 'مصمم UI/UX', 'خبير تجارة إلكترونية'],
   typeSpeed: 100,
