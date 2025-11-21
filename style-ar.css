@@ -217,7 +217,7 @@ span {
     box-shadow: none;
 }
 
-/* ====== About Section ====== */
+/* ====== About Section - الإصلاح الكامل ====== */
 .about {
     display: flex;
     justify-content: center;
@@ -250,19 +250,34 @@ span {
 .about-content {
     text-align: right;
     width: 100%;
+    direction: rtl;
 }
 
 .about-content h2 {
     text-align: right;
     line-height: 1.5;
     margin-bottom: 2rem;
+    direction: rtl;
 }
 
 .about-content h3 {
     font-size: 2.6rem;
     text-align: right;
+    direction: rtl;
 }
 
+/* هذا هو الإصلاح الرئيسي - إعادة تعيين جميع خصائص النص */
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+    line-height: 2;
+    text-align: right !important;
+    direction: rtl !important;
+    unicode-bidi: plaintext !important;
+    text-align-last: right !important;
+}
+
+/* حل بديل للنص المختلط */
 .about-text {
     font-size: 1.6rem;
     margin: 2rem 0;
@@ -275,6 +290,7 @@ span {
 .about-btn-container {
     text-align: right;
     margin-top: 2rem;
+    direction: rtl;
 }
 
 /* ====== About Full ====== */
@@ -301,12 +317,14 @@ span {
 .about-full .about-content {
     flex: 1 1 40rem;
     text-align: right;
+    direction: rtl;
 }
 
 .about-full .about-content h2 {
     text-align: right;
     margin-bottom: 3rem;
     font-size: 4rem;
+    direction: rtl;
 }
 
 .about-full .about-content p {
@@ -321,6 +339,7 @@ span {
 .about-full .about-content ul {
     margin: 2rem 0;
     padding-right: 2rem;
+    direction: rtl;
 }
 
 .about-full .about-content li {
@@ -648,6 +667,7 @@ span {
 
     .about-full .about-content p {
         text-align: right;
+        direction: rtl;
     }
 
     .about-btn-container {
@@ -685,4 +705,19 @@ span {
     .header .logo-img {
         height: 40px;
     }
+}
+
+/* ====== حل إضافي للمشكلة ====== */
+/* إذا استمرت المشكلة، جرب هذه القاعدة الإضافية */
+.about-content p:first-of-type {
+    text-align: right !important;
+    direction: rtl !important;
+    unicode-bidi: plaintext !important;
+}
+
+/* حل بديل باستخدام محدد أقوى */
+section#about .about-content p {
+    text-align: right !important;
+    direction: rtl !important;
+    unicode-bidi: plaintext !important;
 }
