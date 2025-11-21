@@ -27,7 +27,7 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
-    direction: rtl;
+    direction: rtl; /* تم تغيير الاتجاه إلى RTL */
 }
 
 section {
@@ -39,7 +39,7 @@ section {
 .header {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0; /* تغيير من left إلى right */
     width: 100%;
     padding: 2rem 9%;
     background: var(--bg-color);
@@ -58,8 +58,8 @@ section {
     display: flex;
     align-items: center;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 50%; /* تغيير من left إلى right */
+    transform: translateX(50%); /* تعديل التحويل */
 }
 
 .header .logo-img {
@@ -82,7 +82,8 @@ section {
     text-decoration: none;
 }
 
-.lang-switch a:hover {
+.lang-switch a:hover,
+.lang-switch a.active-lang {
     color: var(--main-color);
 }
 
@@ -105,7 +106,7 @@ section {
 .navbar a {
     font-size: 1.7rem;
     color: var(--text-color);
-    margin-left: 4rem;
+    margin-left: 4rem; /* تغيير من right إلى left */
     transition: .3s;
 }
 
@@ -128,6 +129,14 @@ section {
     max-width: 500px;
     height: auto;
     display: block;
+    border-radius: 50%;
+    box-shadow: 0 0 2rem var(--main-color);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.home-img img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 3rem var(--main-color);
 }
 
 .home-content h3 {
@@ -155,6 +164,7 @@ span {
 .home-content p {
     font-size: 1.6rem;
     line-height: 2;
+    text-align: right; /* تغيير محاذاة النص */
 }
 
 /* ====== Social Media Icons ====== */
@@ -170,7 +180,7 @@ span {
     border-radius: 50%;
     font-size: 2rem;
     color: var(--main-color);
-    margin: 3rem 1.5rem 3rem 0;
+    margin: 3rem 0 3rem 1.5rem; /* تعديل الهوامش */
     transition: .5s ease;
 }
 
@@ -221,8 +231,15 @@ span {
     width: 35vw;
     max-width: 500px;
     height: auto;
-    border-radius: 1rem;
+    border-radius: 50%;
     display: block;
+    box-shadow: 0 0 2rem var(--main-color);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-img img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 3rem var(--main-color);
 }
 
 .heading {
@@ -230,8 +247,12 @@ span {
     font-size: 4.5rem;
 }
 
+.about-content {
+    text-align: right; /* تغيير من left إلى right */
+}
+
 .about-content h2 {
-    text-align: right;
+    text-align: right; /* تغيير من left إلى right */
     line-height: 1.5;
 }
 
@@ -243,15 +264,20 @@ span {
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
     line-height: 2;
+    text-align: right; /* تغيير من left إلى right */
 }
 
-/* ====== إصلاح صفحة About الكاملة ====== */
+.about-btn-container {
+    text-align: right; /* تغيير من left إلى right */
+}
+
+/* ====== About Full ====== */
 .about-full {
     padding-top: 12rem;
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-align: center;
     gap: 4rem;
     background: var(--second-bg-color);
     flex-wrap: wrap;
@@ -271,7 +297,7 @@ span {
 }
 
 .about-full .about-content h2 {
-    text-align: right;
+    text-align: right; /* تغيير من left إلى right */
     margin-bottom: 3rem;
     font-size: 4rem;
 }
@@ -280,12 +306,12 @@ span {
     font-size: 1.8rem;
     margin: 2rem 0;
     line-height: 1.8;
-    text-align: justify;
+    text-align: right; /* تغيير من left إلى right */
 }
 
 .about-full .about-content ul {
     margin: 2rem 0;
-    padding-right: 2rem;
+    padding-right: 2rem; /* تغيير من left إلى right */
 }
 
 .about-full .about-content li {
@@ -293,6 +319,7 @@ span {
     margin: 1rem 0;
     line-height: 1.6;
     list-style-type: disc;
+    text-align: right; /* تغيير من left إلى right */
 }
 
 .about-full .about-content strong {
@@ -357,10 +384,48 @@ span {
     text-align: center;
 }
 
+/* ديسكتوب: 3 صور */
 .portfolio-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+}
+
+/* تابلت: عمودين */
+@media (max-width: 992px) {
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* موبايل - صورتين */
+@media (max-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .project {
+        padding: 0.8rem;
+        border-radius: 1rem;
+    }
+}
+
+/* أصغر الشاشات: صورتين مع تقليل الهوامش */
+@media (max-width: 450px) {
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .project {
+        padding: 0.5rem;
+        border-radius: 0.8rem;
+    }
+    
+    .portfolio h2 {
+        margin-bottom: 3rem;
+    }
 }
 
 .project {
@@ -391,7 +456,19 @@ span {
     transform: scale(1.05);
 }
 
-/* ====== Contact Section ====== */
+/* ====== تأثير إضافي للصورتين الأولى والثانية ====== */
+.portfolio-container .project:nth-child(1):hover,
+.portfolio-container .project:nth-child(2):hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 1.5rem var(--main-color);
+}
+
+.portfolio-container .project:nth-child(1):hover img,
+.portfolio-container .project:nth-child(2):hover img {
+    transform: scale(1.05);
+}
+
+/* ====== Contact ====== */
 .contact h2 {
     margin-bottom: 3rem;
     text-align: center;
@@ -543,7 +620,6 @@ span {
     .about { flex-direction: column; }
     .about-img img { width: 90vw; }
 
-    /* تحسينات لصفحة about-full */
     .about-full {
         padding-top: 8rem;
         flex-direction: column;
@@ -555,7 +631,11 @@ span {
     }
 
     .about-full .about-content p {
-        text-align: right;
+        text-align: right; /* تغيير من left إلى right */
+    }
+
+    .about-btn-container {
+        text-align: center;
     }
 
     .about-full .about-img img {
@@ -564,8 +644,14 @@ span {
     }
 
     .services-container { flex-direction: column; }
-    .portfolio-container { grid-template-columns: 1fr; }
+
     .contact form .input-box input { width: 100%; }
+
+    .footer {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
 }
 
 @media (max-width: 450px) {
@@ -582,11 +668,5 @@ span {
     
     .header .logo-img {
         height: 40px;
-    }
-    
-    .footer {
-        flex-direction: column;
-        gap: 1.5rem;
-        text-align: center;
     }
 }
