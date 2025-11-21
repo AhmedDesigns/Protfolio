@@ -43,7 +43,7 @@ ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
 const typed = new Typed('.multiple-text', {
-  strings: ['مصمم ويب', 'مطور ويب', 'مصمم UI/UX', 'خبير تجارة إلكترونية'],
+  strings: ['\u200Fمصمم ويب', '\u200Fمطور ويب', '\u200Fمصمم UI/UX', '\u200Fخبير تجارة إلكترونية'],
   typeSpeed: 100,
   backSpeed: 100,
   backDelay: 1000,
