@@ -27,6 +27,7 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    direction: rtl;
 }
 
 section {
@@ -105,7 +106,8 @@ section {
 .navbar a {
     font-size: 1.7rem;
     color: var(--text-color);
-    margin-left: 4rem;
+    margin-right: 4rem; /* تم التعديل من left إلى right */
+    margin-left: 0; /* إضافة هذا السطر */
     transition: .3s;
 }
 
@@ -166,8 +168,7 @@ span {
 }
 
 /* ====== Social Media Icons ====== */
-.social-media a,
-.social-img-link {
+.social-media a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -178,24 +179,23 @@ span {
     border-radius: 50%;
     font-size: 2rem;
     color: var(--main-color);
-    margin: 3rem 1.5rem 3rem 0;
+    margin: 3rem 0 3rem 1.5rem; /* تم تعديل الهامش للعربية */
     transition: .5s ease;
 }
 
-.social-media a:hover,
-.social-img-link:hover {
+.social-media a:hover {
     background: var(--main-color);
     color: var(--second-bg-color);
     box-shadow: 0 0 1rem var(--main-color);
 }
 
-.social-img-link img.social-img {
-    width: 50%;
-    height: 50%;
-    object-fit: contain;
+/* ====== Buttons ====== */
+.home-buttons {
+    display: flex;
+    justify-content: flex-end; /* تم التعديل للعربية */
+    gap: 1rem;
 }
 
-/* ====== Buttons ====== */
 .btn {
     display: inline-block;
     padding: 1rem 2.8rem;
@@ -208,7 +208,6 @@ span {
     font-weight: 600;
     transition: .5s ease;
     cursor: pointer;
-    margin: 0.5rem;
 }
 
 .btn:hover {
@@ -427,37 +426,6 @@ span {
     color: var(--second-bg-color);
 }
 
-/* ====== التعديلات الخاصة بالنسخة العربية ====== */
-html[lang="ar"] body {
-    direction: rtl;
-    text-align: right;
-}
-
-html[lang="ar"] .navbar a {
-    margin-left: 0;
-    margin-right: 4rem;
-}
-
-html[lang="ar"] .home-content,
-html[lang="ar"] .about-content,
-html[lang="ar"] .services-box,
-html[lang="ar"] .contact form {
-    text-align: right;
-}
-
-html[lang="ar"] .social-media a {
-    margin: 3rem 0 3rem 1.5rem;
-}
-
-html[lang="ar"] .home-buttons {
-    display: flex;
-    justify-content: flex-end;
-}
-
-html[lang="ar"] .footer {
-    direction: rtl;
-}
-
 /* ====== Responsive Design ====== */
 @media (max-width: 991px) {
     .header { padding: 2rem 3%; }
@@ -478,7 +446,7 @@ html[lang="ar"] .footer {
     .navbar {
         position: absolute;
         top: 100%;
-        right: 0;
+        right: 0; /* تم التعديل للعربية */
         width: 100%;
         padding: 1rem 3%;
         background: var(--bg-color);
@@ -495,7 +463,7 @@ html[lang="ar"] .footer {
     .navbar a {
         margin: 1rem 0;
         display: block;
-        margin-left: 0;
+        margin-right: 0; /* تم التعديل للعربية */
     }
 
     .header {
@@ -563,24 +531,14 @@ html[lang="ar"] .footer {
     .portfolio-container {
         grid-template-columns: 1fr;
     }
-}
-
-/* تعديلات خاصة للعربية على الشاشات الصغيرة */
-@media (max-width: 768px) {
-    html[lang="ar"] .navbar a {
-        margin-right: 0;
+    
+    .home-buttons {
+        flex-direction: column;
+        align-items: center;
     }
     
-    html[lang="ar"] .home-content,
-    html[lang="ar"] .about-content {
+    .btn {
+        width: 100%;
         text-align: center;
-    }
-    
-    html[lang="ar"] .home-buttons {
-        justify-content: center;
-    }
-    
-    html[lang="ar"] .social-media a {
-        margin: 3rem 0.75rem;
     }
 }
