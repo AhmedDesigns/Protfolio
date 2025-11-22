@@ -54,6 +54,7 @@ ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
 //==================== typed js بالعربي ====================//
 const typed = new Typed('.multiple-text', {
+  const typed = new Typed('.multiple-text', {
   strings: ['مصمم ويب', 'مطور ويب', 'مصمم واجهات', 'خبير تجارة إلكترونية'],
   typeSpeed: 100,
   backSpeed: 100,
