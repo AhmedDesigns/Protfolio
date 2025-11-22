@@ -58,32 +58,71 @@ if (typeof ScrollReveal !== 'undefined') {
 }
 
 //==================== typed js ====================//
-if (typeof Typed !== 'undefined') {
-    const typedElement = document.querySelector('.multiple-text');
-    if (typedElement) {
-        // التحقق من لغة الصفحة أولاً
-        const isArabic = document.documentElement.lang === 'ar' || 
-                         document.documentElement.dir === 'rtl' ||
-                         document.querySelector('html[lang="ar"]') !== null;
-        
-        if (isArabic) {
-            // النسخة العربية
-            const typed = new Typed('.multiple-text', {
-                strings: ['مصمم ويب', 'مطور ويب', 'مصمم UI/UX', 'خبير تجارة إلكترونية'],
-                typeSpeed: 100,
-                backSpeed: 100,
-                backDelay: 1000,
-                loop: true
-            });
-        } else {
-            // النسخة الإنجليزية
-            const typed = new Typed('.multiple-text', {
-                strings: ['Web Designer', 'Web Developer', 'UI/UX Designer', 'E-commerce Expert'],
-                typeSpeed: 100,
-                backSpeed: 100,
-                backDelay: 1000,
-                loop: true
-            });
-        }
+function initializeTyped() {
+    if (typeof Typed === 'undefined') {
+        console.log('Typed.js not loaded yet');
+        return;
     }
+    
+    const typedElement = document.querySelector('.multiple-text');
+    if (!typedElement) {
+        console.log('Typed element not found');
+        return;
+    }
+    
+    // تدمير أي نسخة سابقة من Typed
+    if (window.typedInstance) {
+        window.typedInstance.destroy();
+        window.typedInstance = null;
+    }
+    
+    // تنظيف العنصر أولاً
+    typedElement.innerHTML = '';
+    
+    // التحقق من اللغة بدقة
+    const isArabic = document.documentElement.lang === 'ar' || 
+                    document.documentElement.dir === 'rtl' ||
+                    document.querySelector('html[lang="ar"]') !== null ||
+                    window.location.href.includes('index-ar') ||
+                    window.location.href.includes('arabic');
+    
+    console.log('Current page language:', isArabic ? 'Arabic' : 'English');
+    
+    // النصوص بناءً على اللغة
+    const arabicTexts = ['مصمم ويب', 'مطور ويب', 'مصمم UI/UX', 'خبير تجارة إلكترونية'];
+    const englishTexts = ['Web Designer', 'Web Developer', 'UI/UX Designer', 'E-commerce Expert'];
+    
+    const stringsToUse = isArabic ? arabicTexts : englishTexts;
+    
+    // تهيئة Typed.js
+    window.typedInstance = new Typed('.multiple-text', {
+        strings: stringsToUse,
+        typeSpeed: 100,
+        backSpeed: 100,
+        backDelay: 1000,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|',
+        onBegin: function(self) {
+            console.log('Typed.js started with strings:', self.strings);
+        }
+    });
+}
+
+// تشغيل Typed بعد تحميل الصفحة بالكامل
+document.addEventListener('DOMContentLoaded', function() {
+    // الانتظار قليلاً لضمان تحميل جميع المكتبات
+    setTimeout(initializeTyped, 500);
+});
+
+// أيضاً تشغيل عند اكتمال تحميل الصفحة
+window.addEventListener('load', function() {
+    setTimeout(initializeTyped, 300);
+});
+
+// حل إضافي للصفحات التي يتم تحميلها ديناميكياً
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTyped);
+} else {
+    setTimeout(initializeTyped, 100);
 }
