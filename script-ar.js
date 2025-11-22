@@ -61,26 +61,29 @@ if (typeof ScrollReveal !== 'undefined') {
 if (typeof Typed !== 'undefined') {
     const typedElement = document.querySelector('.multiple-text');
     if (typedElement) {
-        const typed = new Typed('.multiple-text', {
-            strings: ['Web Designer', 'Web Developer', 'UI/UX Designer', 'E-commerce Expert'],
-            typeSpeed: 100,
-            backSpeed: 100,
-            backDelay: 1000,
-            loop: true
-        });
-    }
-}
-
-// Arabic version typed text
-if (typeof Typed !== 'undefined') {
-    const arabicTypedElement = document.querySelector('.multiple-text');
-    if (arabicTypedElement && document.documentElement.dir === 'rtl') {
-        const typed = new Typed('.multiple-text', {
-            strings: ['مصمم ويب', 'مطور ويب', 'مصمم UI/UX', 'خبير تجارة إلكترونية'],
-            typeSpeed: 100,
-            backSpeed: 100,
-            backDelay: 1000,
-            loop: true
-        });
+        // التحقق من لغة الصفحة أولاً
+        const isArabic = document.documentElement.lang === 'ar' || 
+                         document.documentElement.dir === 'rtl' ||
+                         document.querySelector('html[lang="ar"]') !== null;
+        
+        if (isArabic) {
+            // النسخة العربية
+            const typed = new Typed('.multiple-text', {
+                strings: ['مصمم ويب', 'مطور ويب', 'مصمم UI/UX', 'خبير تجارة إلكترونية'],
+                typeSpeed: 100,
+                backSpeed: 100,
+                backDelay: 1000,
+                loop: true
+            });
+        } else {
+            // النسخة الإنجليزية
+            const typed = new Typed('.multiple-text', {
+                strings: ['Web Designer', 'Web Developer', 'UI/UX Designer', 'E-commerce Expert'],
+                typeSpeed: 100,
+                backSpeed: 100,
+                backDelay: 1000,
+                loop: true
+            });
+        }
     }
 }
