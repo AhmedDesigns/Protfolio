@@ -52,7 +52,7 @@ ScrollReveal().reveal('.home-img, .services-container, .portfolio-container, .co
 ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'right' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
-//==================== typed js ====================//
+//==================== typed js بالعربي ====================//
 const typed = new Typed('.multiple-text', {
   strings: ['مصمم ويب', 'مطور ويب', 'مصمم واجهات', 'خبير تجارة إلكترونية'],
   typeSpeed: 100,
